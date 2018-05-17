@@ -1,5 +1,4 @@
-package com.scenarios;
-
+package com.scenarios.collection;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,18 +6,7 @@ import java.util.List;
 public class ListSplittoMutiple {
 
     public static void main(String[] args) {
-        List<String> l = new ArrayList<>();
-        l.add("1");
-        l.add("2");
-        l.add("3");
-        l.add("4");
-        l.add("5");
-        l.add("6");
-        l.add("7");
-        l.add("8");
-       // Lists
-        System.out.println(splitList(l,5));
-
+        System.out.println(splitList(Util.getListOfString(),5));
     }
     private static List<List<String>> splitList(final List<String> list, final int maxElement) {
 

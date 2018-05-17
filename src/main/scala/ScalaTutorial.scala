@@ -1,4 +1,4 @@
-import com.scala.{ExtendingClass, Point}
+
 
 object ScalaTutorial{
 
@@ -12,7 +12,7 @@ object ScalaTutorial{
     var b = Array(1,2,3,4,5)
     //name = "Hello";
   //Multiple assignments
-    val (myVar1: Int, myVar2: String) = Pair(40, "Foo")
+    //val (myVar1: Int, myVar2: String) = Pair(40, "Foo")
     for(i<- name.toArray)
       print(" Character ["+i+"] ")
     // Method declaration -> def functionName (param1:dataType, param2:dt) : returnType

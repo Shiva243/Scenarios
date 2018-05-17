@@ -1,0 +1,28 @@
+version 'unspecified'
+
+apply plugin: 'java'
+apply plugin: 'scala'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+sourceSets {
+    main {
+        scala {
+            srcDirs = ['src/main/scala']
+        }
+    }
+    /*test {
+        scala {
+            srcDirs = ['test/scala']
+        }
+    }*/
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'org.scala-lang:scala-library:2.11.1'
+    compile 'org.scala-lang:scala-compiler:2.11.7'
+}
+

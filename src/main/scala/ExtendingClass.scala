@@ -1,4 +1,3 @@
-package com.scala
 
 class ExtendingClass(override val a: Int,override val b:Int, val c:Int) extends Point(a,b){
   var z:Int = c;
