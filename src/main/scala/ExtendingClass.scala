@@ -1,4 +1,4 @@
-package com.scala
+
 
 class ExtendingClass(override val a: Int,override val b:Int, val c:Int) extends Point(a,b){
   var z:Int = c;
@@ -12,9 +12,9 @@ class ExtendingClass(override val a: Int,override val b:Int, val c:Int) extends 
 }
 class Point(val a : Int, val b:Int){
   //Class variables or Fields and a,b variables avilable entire class
-  var (x:Int,y:Int) = Pair(a,b);
-   //var x = a;
-   //var y = b;
+  //var (x:Int,y:Int) = Pair(a,b);
+   var x:Int = a;
+   var y:Int = b;
   def add(var1:Int,var2 : Int): Unit = {
     x= x+var1;
     y=y+var2;
