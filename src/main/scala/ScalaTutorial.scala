@@ -31,6 +31,7 @@ object ScalaTutorial{
     point.add(30,40);
     val extendClass = new ExtendingClass(20,30,40)
     extendClass.add(50,60,70)
+
   }
   def patternMatch(value:String) ={
     value match{
