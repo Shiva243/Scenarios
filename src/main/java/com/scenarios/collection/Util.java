@@ -3,6 +3,9 @@ package com.scenarios.collection;
 import java.util.*;
 
 public class Util {
+    private Util(){
+
+    }
     public static List<String> getListOfString(){
         List<String> tech = new ArrayList<>();
         tech.add("Java");
@@ -26,14 +29,12 @@ public class Util {
         return l;
     }
     public static Set<String> getSettOfString(){
-        Set<String> tech = new HashSet<String>();
+        Set<String> tech = new HashSet<>();
         tech.add("Java");
         tech.add("Spring");
         tech.add("Struts");
         tech.add("Hibernate");
         tech.add("JPA");
-        tech.add("Angular");
-        tech.add("Angular");
         return tech;
     }
 

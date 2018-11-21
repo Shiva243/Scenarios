@@ -14,10 +14,9 @@ public class ListSplittoMutiple {
     }
     private static List<List<String>> splitList(final List<String> list, final int maxElement) {
 
-        final List<List<String>> result = new ArrayList<List<String>>();
+        final List<List<String>> result = new ArrayList<>();
 
         final int div = list.size() / maxElement;
-
         System.out.println(div);
 
         for (int i = 0; i <= div; i++) {

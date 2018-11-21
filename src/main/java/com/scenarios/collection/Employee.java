@@ -2,12 +2,14 @@ package com.scenarios.collection;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 @Data
 @AllArgsConstructor
+@Slf4j
 public class Employee implements  Comparable{
 
     private Integer id;
@@ -20,7 +22,7 @@ public class Employee implements  Comparable{
        // System.out.print(this.name.compareTo(e.getName()));
         return this.id.compareTo(e.getId());
     }
-    public static Comparator<Employee> EmpNameComparator = new Comparator<Employee>() {
+    public static final Comparator<Employee> EmpNameComparator = new Comparator<Employee>() {
         @Override
         public int compare(Employee o1, Employee o2) {
 

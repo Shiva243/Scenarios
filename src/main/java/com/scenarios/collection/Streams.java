@@ -32,21 +32,17 @@ public class Streams {
 
         Comparator<Items> ci= (i1,i2)->
                 i1.getItemName().compareToIgnoreCase(i2.getItemName());
-//il1.sort(ci);
-//	il2.sort(ci);
-//	il3.sort(ci);
         map.put("1146", il1);
         map.put("1147", il2);
         map.put("1148", il3);
         System.out.println(map);
 
-        Map<String, Object> result = map
+        return map
                 .entrySet().stream()
                 .collect(Collectors
                         .toMap(Map.Entry::getKey,
                                 v->v.getValue().stream().
                                         sorted(ci).collect(Collectors.toList())));
-        return result;
     }
 }
 
