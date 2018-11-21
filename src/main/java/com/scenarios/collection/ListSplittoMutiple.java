@@ -6,10 +6,11 @@ import java.util.List;
 public class ListSplittoMutiple {
 
     public static void main(String[] args) {
-        System.out.println(splitList(Util.getListOfString(),4));
+        //System.out.println(splitList(Util.getListOfString(),4));
         Streams s = new Streams();
         s.seqStream(Util.getListOfInt());
         s.parStream(Util.getListOfInt());
+        Util.getSettOfString();
     }
     private static List<List<String>> splitList(final List<String> list, final int maxElement) {
 

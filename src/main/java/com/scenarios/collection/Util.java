@@ -1,7 +1,6 @@
 package com.scenarios.collection;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Util {
     public static List<String> getListOfString(){
@@ -26,4 +25,32 @@ public class Util {
         l.add(8);
         return l;
     }
+    public static Set<String> getSettOfString(){
+        Set<String> tech = new HashSet<String>();
+        tech.add("Java");
+        tech.add("Spring");
+        tech.add("Struts");
+        tech.add("Hibernate");
+        tech.add("JPA");
+        tech.add("Angular");
+        tech.add("Angular");
+        return tech;
+    }
+
+    public static Map<String, Set<String>> getMap(){
+        Map<String,Set<String>> map = new HashMap<>();
+        map.put("1",getSettOfString());
+        map.put("4",getSettOfString());
+        map.put("3",getSettOfString());
+        map.put("5",getSettOfString());
+        return map;
+    }
+ public static List<Employee> getEmpList(){
+        List<Employee> empList = new ArrayList<>();
+        empList.add(new Employee(2,"Shiva","SSE"));
+        empList.add(new Employee(3,"Anish","E"));
+        empList.add(new Employee(1,"Chary","M"));
+     empList.add(new Employee(1,"Koti","D"));
+        return empList;
+ }
 }
