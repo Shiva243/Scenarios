@@ -1,5 +1,7 @@
 package com.scenarios;
 
+import lombok.extern.java.Log;
+
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.UnsupportedEncodingException;
@@ -7,29 +9,26 @@ import java.net.URLEncoder;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
-
+@Log
 public class SignGen {
         public static void main(String args[]){
-            GetSASToken("https://orderevents-ns.servicebus.windows.net/orderevents","RootManageSharedAccessKey","y/2WycnftbFTyqknqGbU3ucFyUU5Ho4Eqm7BkiINaf0=");
+            getSASToken("https://orderevents-ns.servicebus.windows.net/orderevents","RootManageSharedAccessKey","y/2WycnftbFTyqknqGbU3ucFyUU5Ho4Eqm7BkiINaf0=");
         }
-        private static String GetSASToken(String resourceUri, String keyName, String key)
+        private static String getSASToken(String resourceUri, String keyName, String key)
         {
             long epoch = System.currentTimeMillis()/1000L;
             int week = 60*60*24*7;
             String expiry = Long.toString(epoch + week);
-
             String sasToken = null;
             try {
                 String stringToSign = URLEncoder.encode(resourceUri, "UTF-8") + "\n" + expiry;
                 String signature = getHMAC256(key, stringToSign);
                 sasToken = "SharedAccessSignature sr=" + URLEncoder.encode(resourceUri, "UTF-8") +"&sig=" +
                         URLEncoder.encode(signature, "UTF-8") + "&se=" + expiry + "&skn=" + keyName;
-                System.out.println(sasToken);
+                log.info(sasToken);
             } catch (UnsupportedEncodingException e) {
-
-                e.printStackTrace();
+                log.warning(""+e.getMessage());
             }
-
             return sasToken;
         }
 

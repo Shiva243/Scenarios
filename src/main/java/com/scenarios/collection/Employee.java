@@ -2,14 +2,16 @@ package com.scenarios.collection;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
+import lombok.NoArgsConstructor;
+import lombok.extern.java.Log;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 @Data
 @AllArgsConstructor
-@Slf4j
+@NoArgsConstructor
+@Log
 public class Employee implements  Comparable{
 
     private Integer id;
@@ -27,27 +29,28 @@ public class Employee implements  Comparable{
         public int compare(Employee o1, Employee o2) {
 
             return o1.getName().compareTo(o2.getName());
+            //return Comparator.compare(o1, o2);
         }
     };
 
     public static void sortEmp(){
         List<Employee> emp = Util.getEmpList();
         Collections.sort(emp);
-        System.out.println("Sort by id ["+emp+"]");
+        log.info("Sort by id ["+emp+"]");
         Collections.sort(emp, Employee.EmpNameComparator);
         emp.sort(Comparator.comparing(Employee::getDesignation));
-        System.out.println("Sort by designation ["+emp+"]");
+        log.info("Sort by designation ["+emp+"]");
         Map<String, List<Employee>> empMap = new HashMap<>();
         empMap.put("7",Util.getEmpList());
         empMap.put("2",Util.getEmpList());
         empMap.put("xyz",Util.getEmpList());
-        System.out.println("Map info ["+empMap+"]");
+        log.info("Map info ["+empMap+"]");
         empMap = empMap.entrySet().stream().collect(Collectors.toMap(              // Collect final result map
                 Map.Entry::getKey,                  // Key mapping is the same
                 e -> e.getValue().stream()          // Stream over list
                         .sorted(Comparator.comparing(Employee::getName)) // Sort by priority
                         .collect(Collectors.toList()))  // Collect mapping into list
         );
-        System.out.println("after sort Map info by Name ["+empMap+"]");
+        log.info("after sort Map info by Name ["+empMap+"]");
     }
 }

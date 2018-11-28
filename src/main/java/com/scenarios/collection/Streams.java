@@ -1,8 +1,10 @@
 package com.scenarios.collection;
 
+import lombok.extern.java.Log;
+
 import java.util.*;
 import java.util.stream.Collectors;
-
+@Log
 public class Streams {
 
     public int sumOfInt(List<Integer> list){
@@ -10,10 +12,21 @@ public class Streams {
     }
 
     public void seqStream(List<Integer> list){
-        list.stream().filter(l->l>1).forEach(p->System.out.print("Seq Stream ["+p+"]"));
+        list.stream().filter(l->l>1).forEach(p->log.info("Seq Stream ["+p+"]"));
     }
     public void parStream(List<Integer> list){
-        list.parallelStream().filter(l->l>1).forEach(p->System.out.print("Par Stream ["+p+"]"));
+        list.parallelStream().filter(l->l>1).forEach(p->log.info("Par Stream ["+p+"]"));
+    }
+    public void listCompare(){
+        final Map<Integer, List<Employee>> emp = Util.getEmpList().stream()
+                .collect(Collectors.groupingBy(Employee::getId, Collectors.toList()));
+        List<Items> list = new ArrayList<>();
+        Util.getListOfInt().stream().forEach(e->Util.getEmpList().stream()
+                .filter(em-> em.getId() == e).forEach(em->{
+                    list.add(new Items(em.getName(),Double.valueOf(e)));
+                }));
+        System.out.print(list);
+
     }
     public  Map<String, Object> iterateMap(){
         Map<String,List<Items>> map=
@@ -35,7 +48,7 @@ public class Streams {
         map.put("1146", il1);
         map.put("1147", il2);
         map.put("1148", il3);
-        System.out.println(map);
+        log.info("Map info ["+map+"]");
 
         return map
                 .entrySet().stream()

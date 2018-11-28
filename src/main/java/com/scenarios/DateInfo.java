@@ -11,7 +11,7 @@ public class DateInfo {
     public static Date convertDateToString(String sDate){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
         LocalDate dateTime = LocalDate.parse(sDate, formatter);
-        System.out.println("Inside convertDateToString ["+dateTime+"]");
+       // log.info("Inside convertDateToString ["+dateTime+"]");
         Date date = Date.from(dateTime.atStartOfDay(ZoneId.systemDefault()).toInstant());
         return date;
     }

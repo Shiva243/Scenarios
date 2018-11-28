@@ -4,13 +4,13 @@ public class EnumTest {
 
     public static void main(String[] args){
         for(Mobile m : Mobile.values()) {
-            System.out.println(m + " costs " + m.showPrice() + " dollars");
+            //log.info(m + " costs " + m.showPrice() + " dollars");
         }
         Mobile mb;
         mb = Mobile.valueOf("Samsung");
-        System.out.println("Selected Mobile: " + mb);
+       // log.info("Selected Mobile: " + mb);
         String value = Translation.valueOf("").getValue();
-        System.out.println("Transaltion value " + value);
+        //log.info("Transaltion value " + value);
     }
     enum Mobile {
         Samsung(400), Nokia(250),Motorola(325);
