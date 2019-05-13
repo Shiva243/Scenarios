@@ -1,5 +1,6 @@
 package com.scenarios.collection;
 
+import com.scenarios.collection.streams.Streams;
 import lombok.extern.java.Log;
 
 import java.util.ArrayList;

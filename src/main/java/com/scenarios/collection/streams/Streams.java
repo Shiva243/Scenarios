@@ -1,5 +1,7 @@
-package com.scenarios.collection;
+package com.scenarios.collection.streams;
 
+import com.scenarios.collection.Employee;
+import com.scenarios.collection.Util;
 import lombok.extern.java.Log;
 
 import java.util.*;

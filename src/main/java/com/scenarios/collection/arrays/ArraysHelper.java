@@ -1,10 +1,9 @@
-package com.scenarios.arrays;
+package com.scenarios.collection.arrays;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class ArraysHelper {

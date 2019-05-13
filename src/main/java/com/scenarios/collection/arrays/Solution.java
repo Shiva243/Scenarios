@@ -1,9 +1,4 @@
-package com.scenarios.arrays;
-
-import java.math.BigDecimal;
-import java.math.MathContext;
-import java.util.*;
-import java.util.stream.Collectors;
+package com.scenarios.collection.arrays;
 
 public class Solution {
     public static void main(String[] args) {

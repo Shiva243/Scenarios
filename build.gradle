@@ -26,5 +26,10 @@ dependencies {
     compile 'org.scala-lang:scala-compiler:2.11.7'
     compile 'org.codehaus.groovy:groovy:2.5.2'
     compile "org.projectlombok:lombok:1.16.10"
+    compile('org.springframework.boot:spring-boot-web')
+    implementation 'com.microsoft.azure:azure-storage:4.0.0'
+    // https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
+
 }
 

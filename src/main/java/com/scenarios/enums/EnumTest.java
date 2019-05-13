@@ -34,4 +34,7 @@ public class EnumTest {
             this.value = value;
         }
     }
+    enum Numbers{
+        ONE;
+    }
 }
