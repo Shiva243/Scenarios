@@ -1,7 +1,8 @@
 import java.security.InvalidKeyException
-import java.util.Base64
+import java.util.{Base64, Calendar}
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
+import java.text.SimpleDateFormat
 
 import javax.crypto.Mac
 import javax.crypto.spec.SecretKeySpec
@@ -12,9 +13,11 @@ object SignGen {
 
   def main(args: Array[String]): Unit = {
     // getAccessToken("https://orderevents-ns.servicebus.windows.net/orderevents", "RootManageSharedAccessKey", "y/2WycnftbFTyqknqGbU3ucFyUU5Ho4Eqm7BkiINaf0=")
-    val r = Random.alphanumeric
-    val x = List.range(1, 3)
+    //val r = Random.alphanumeric
+    //val x = List.range(1, 3)
    // x.foreach( )
+    //2019-01-16T20:58:57
+    print(new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss").format(Calendar.getInstance().getTime()))
 
   }
   def getAccessToken(resourceUri: String, keyName: String, key: String): String = {

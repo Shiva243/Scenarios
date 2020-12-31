@@ -1,5 +1,7 @@
 package com.scenarios;
 
+import scala.tools.nsc.doc.model.UpperBoundedTypeParamConstraint;
+
 import java.text.SimpleDateFormat;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
@@ -8,6 +10,8 @@ import java.util.Date;
 import java.util.TimeZone;
 
 public class DateInfo {
+
+
 
     public static Date convertDateToString(String sDate){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'hh:mm:ss'Z'");
@@ -34,9 +38,10 @@ public class DateInfo {
         System.out.print(sdf.parse("2019-01-09T09:51:90"));
 
         if(new Date().after(sdf.parse("2019-01-09T09:51:90"))){
-            System.out.print("true");
+            System.out.println("true");
 
         }
+        compare();
 
         //System.out.print(convertDateToString("2019-01-09T10:45:23+03:00"));
     }
@@ -54,5 +59,16 @@ public class DateInfo {
 
         System.out.println("Current date and time in UTC : " + utcDate);
         System.out.println("Current date and time in UTC : " + Date.from(utcDate.toInstant()));
+    }
+    public static void compare(){
+        // nartd
+        //compar
+        LocalDateTime targetDate = LocalDateTime.of(2019, 06, 1,0,0,0);
+        LocalDateTime date = LocalDateTime.now();  // x x
+        //local = LocalDate.of(2017, 07, 22);
+        System.out.println("after"+targetDate.isAfter(date));
+        System.out.println("before"+targetDate.isBefore(date));
+        System.out.println(targetDate.compareTo(date));
+
     }
 }

@@ -3,12 +3,10 @@ package com.scenarios;
 
 
 
-import com.scenarios.collection.Employee;
-import com.scenarios.collection.Util;
+import com.scenarios.test.collection.Employee;
+import com.scenarios.test.collection.Util;
 
 import java.net.InetAddress;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.*;
 
 
@@ -31,9 +29,11 @@ public class Application{
         //cal.add(Calendar.DATE, -15);
         System.out.println(cal.getTimeInMillis());
         DateInfo.timeZone("2019030315172452", "America/New_York");
-        Employee e1 = new Employee(1,"Java3232","D");
+        Employee e1 = new Employee(1,"Java3232","D",null);
         System.out.println(Util.getEmpList().contains(e1));
         List<Employee> el = Util.getEmpList();
+
+
 
       el.removeIf(e-> e.equals(e1));
         System.out.println(el);
